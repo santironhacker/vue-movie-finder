@@ -44,7 +44,7 @@ export default {
       default: () => 'Unknown year'
     },
     posterUrl: {
-      type: url,
+      type: String,
       default: () => setAltImg
     }
   },
