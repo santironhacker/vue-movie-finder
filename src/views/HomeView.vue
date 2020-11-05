@@ -10,13 +10,24 @@
         However, next morning when you wake up you forgot what was all about. 
         <strong>Movie Finder</strong> watches after your memory to keep track of your friend's best picks.
       </p>
+      <movies-searchbar @search-action="submitSearch"></movies-searchbar>
     </base-card>
   </section>
 </template>
 
 <script>
+import MoviesSearchbar from '../components/movies/MoviesSearchbar.vue';
+
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  components: {
+    MoviesSearchbar
+  },
+  methods: {
+    submitSearch(data) {
+      this.$router.push({ path: 'movies', props: {movieTitle: data}, query: { title: data }});      
+    }
+  }
 }
 </script>
 
