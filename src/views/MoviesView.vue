@@ -2,6 +2,7 @@
   <div class="container">
     <h2>Matching movies</h2>
     <div v-if="Object.keys(movies).length > 0">
+      <movies-slider :movies="movies[page]"></movies-slider>
       <base-card class="actionsCard">
         <h3>Looking for more results?</h3>
         <p>{{ totalResults }} results found for the provided search title "{{ searchTitle }}". You are currently in page {{ page }}.</p>
@@ -25,9 +26,13 @@
 
 <script>
 import { getMoviesByTitle } from '../api/movies.api';
+import MoviesSlider from '../components/movies/MoviesSlider.vue';
 
 export default {
   name: 'MoviesView',
+  components: {
+    MoviesSlider
+  },
   data() {
     return {
       movies: {},
