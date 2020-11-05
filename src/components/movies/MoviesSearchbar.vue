@@ -1,37 +1,42 @@
 <template>
   <aside>
-    <input 
-      type="text" 
-      v-model.trim="searchInput" 
-      :placeholder="placeholderInput" 
-      @keyup.enter="submitInput" 
+    <input
       ref="movieTitle"
+      v-model.trim="searchInput"
+      type="text"
+      :placeholder="placeholderInput"
+      @keyup.enter="submitInput"
     >
-    <base-button @click="submitInput" mode="outline">Search</base-button>
+    <base-button
+      mode="outline"
+      @click="submitInput"
+    >
+      Search
+    </base-button>
   </aside>
 </template>
 
 <script>
 export default {
   emits: ['search-action'],
-  data() {
+  data () {
     return {
       displayValue: '',
       searchInput: '',
       placeholderInput: 'Enter a movie title...'
-    }
+    };
+  },
+  mounted () {
+    this.$refs.movieTitle.focus();
   },
   methods: {
-    submitInput() {
+    submitInput () {
       if (this.searchInput !== '') {
         this.$emit('search-action', this.searchInput);
       }
     }
-  },
-  mounted() {
-    this.$refs.movieTitle.focus();
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
-  <TheHeader/>
+  <TheHeader />
   <main>
-    <router-view></router-view>
+    <router-view />
   </main>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
     TheHeader
   }
-}
+};
 </script>
 
 <style lang="scss">

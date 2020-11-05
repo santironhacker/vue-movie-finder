@@ -2,19 +2,19 @@
   <div class="container">
     <h2>Matching movies</h2>
     <div v-if="Object.keys(movies).length > 0">
-      <movies-slider :movies="movies[page]"></movies-slider>
+      <movies-slider :movies="movies[page]" />
       <base-card class="actionsCard">
         <h3>Looking for more results?</h3>
         <p>{{ totalResults }} results found for the provided search title "{{ searchTitle }}". You are currently in page {{ page }}.</p>
-        <base-button 
+        <base-button
           mode="outline"
-          @click="onPreviousPage"
           :disabled="page === 1"
+          @click="onPreviousPage"
         >
           Previous page
         </base-button>
-        <base-button 
-          mode="outline" 
+        <base-button
+          mode="outline"
           @click="onNextPage"
         >
           Next page
@@ -22,7 +22,7 @@
       </base-card>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 import { getMoviesByTitle } from '../api/movies.api';
@@ -33,53 +33,53 @@ export default {
   components: {
     MoviesSlider
   },
-  data() {
+  data () {
     return {
       movies: {},
       page: 1,
       totalResults: 30,
       searchTitle: '',
       apiResultsPerPage: 10
-    }
+    };
+  },
+  mounted () {
+    this.loadMovies();
   },
   methods: {
-    loadMovies() {
+    loadMovies () {
       // Check if the input changed
-      if(this.searchTitle !== this.$route.query['title']) {
-        this.searchTitle = this.$route.query['title'];
-        this.movies = new Object({});
+      if (this.searchTitle !== this.$route.query.title) {
+        this.searchTitle = this.$route.query.title;
+        this.movies = {};
       }
-      if(!Object.prototype.hasOwnProperty.call(this.movies, this.page)) {
+      if (!Object.prototype.hasOwnProperty.call(this.movies, this.page)) {
         getMoviesByTitle(this.searchTitle, this.page)
-        .then(res => {
-          const onePageResults = [];
-          res.data.Search.forEach(movie => {
-            onePageResults.push(movie);
+          .then(res => {
+            const onePageResults = [];
+            res.data.Search.forEach(movie => {
+              onePageResults.push(movie);
+            });
+            this.movies[this.page] = onePageResults;
+            this.totalResults = res.data.totalResults;
+          })
+          .catch(error => {
+            console.log(error);
+          })
+          .then(() => {
+            console.log('always executed');
           });
-          this.movies[this.page] = onePageResults;
-          this.totalResults = res.data.totalResults;
-        })
-        .catch(error => {
-          console.log(error);
-        })
-        .then(() => {
-          console.log('always executed');
-        });
       }
     },
-    onPreviousPage() {
+    onPreviousPage () {
       this.page--;
       this.loadMovies();
     },
-    onNextPage() {
+    onNextPage () {
       this.page++;
       this.loadMovies();
     }
-  },
-  mounted() {
-    this.loadMovies();
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

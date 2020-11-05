@@ -1,12 +1,23 @@
 <template>
-  <a v-if="hyperlink" :class="mode" :href="href">
-    <slot></slot>
+  <a
+    v-if="hyperlink"
+    :class="mode"
+    :href="href"
+  >
+    <slot />
   </a>
-  <router-link v-else-if="link" :class="mode" :to="to">
-    <slot></slot>
+  <router-link
+    v-else-if="link"
+    :class="mode"
+    :to="to"
+  >
+    <slot />
   </router-link>
-  <button v-else :class="mode">
-    <slot></slot>
+  <button
+    v-else
+    :class="mode"
+  >
+    <slot />
   </button>
 </template>
 
@@ -39,7 +50,7 @@ export default {
       default: '/'
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

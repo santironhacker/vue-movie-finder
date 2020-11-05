@@ -1,7 +1,11 @@
 <template>
   <header>
     <nav>
-      <img class="logo" src="../../assets/movie-roll-icon.png" alt="Website logo">
+      <img
+        class="logo"
+        src="../../assets/movie-roll-icon.png"
+        alt="Website logo"
+      >
       <div>
         <h1>
           <router-link to="/">
@@ -29,7 +33,7 @@
 <script>
 export default {
 
-}
+};
 </script>
 
 <style lang="scss" scoped>

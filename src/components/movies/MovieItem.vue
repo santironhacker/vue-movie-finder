@@ -17,33 +17,48 @@
     <img
       :src="posterUrl"
       :alt="imgDescription"
-      @error="setAltImg"
       width="300"
       height="444"
+      @error="setAltImg"
     >
   </article>
 </template>
 
 <script>
 export default {
-  props: [
-    'id',
-    'title',
-    'director',
-    'year',
-    'posterUrl'
-  ],
-  methods: {
-    setAltImg (event) {
-      event.target.src = require('@/assets/img-not-available.png')
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      default: () => 'Unknow title'
+    },
+    director: {
+      type: String,
+      default: () => 'Unknown director'
+    },
+    year: {
+      type: String,
+      default: () => 'Unknown year'
+    },
+    posterUrl: {
+      type: url,
+      default: () => setAltImg
     }
   },
   computed: {
     imgDescription () {
-      return `Poster from the movie ${this.title}`
+      return `Poster from the movie ${this.title}`;
+    }
+  },
+  methods: {
+    setAltImg (event) {
+      event.target.src = require('@/assets/img-not-available.png');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

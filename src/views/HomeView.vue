@@ -7,10 +7,10 @@
       </p>
       <q>I must see this movie!</q>
       <p>
-        However, next morning when you wake up you forgot what was all about. 
+        However, next morning when you wake up you forgot what was all about.
         <strong>Movie Finder</strong> watches after your memory to keep track of your friend's best picks.
       </p>
-      <movies-searchbar @search-action="submitSearch"></movies-searchbar>
+      <movies-searchbar @search-action="submitSearch" />
     </base-card>
   </section>
 </template>
@@ -24,11 +24,11 @@ export default {
     MoviesSearchbar
   },
   methods: {
-    submitSearch(data) {
-      this.$router.push({ path: 'movies', props: {movieTitle: data}, query: { title: data }});      
+    submitSearch (data) {
+      this.$router.push({ path: 'movies', props: { movieTitle: data }, query: { title: data } });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
