@@ -7,7 +7,7 @@
       @keyup.enter="submitInput" 
       ref="movieTitle"
     >
-    <button @click="submitInput">Search</button>
+    <base-button @click="submitInput" mode="outline">Search</base-button>
   </aside>
 </template>
 
@@ -21,9 +21,6 @@ export default {
       placeholderInput: 'Enter a movie title...'
     }
   },
-  mixins: [
-    // DebounceMixin
-  ],
   methods: {
     submitInput() {
       this.$emit('search-action', this.searchInput);
