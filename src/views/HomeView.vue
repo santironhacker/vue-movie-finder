@@ -21,8 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/global.scss";
-
 .section-1 {
   /* Set background style */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../assets/movie-rolls-original.jpg") no-repeat center center fixed;
@@ -38,6 +36,10 @@ export default {
   /* Set up proportionate scaling */
   width: 100%;
   height: auto;
+}
+
+h2 {
+  @include page-title();
 }
 
 p {

@@ -17,8 +17,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/global.scss";
-
 body {
   margin: 0;
 }
