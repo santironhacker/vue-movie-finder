@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:css": "stylelint '**/*.vue' --syntax scss"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -24,6 +25,7 @@
     "sass-loader": "^10.0.5",
     "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0",
+    "stylelint-processor-html": "^1.0.0",
     "webpack": "^4.44.2"
   },
   "eslintConfig": {
