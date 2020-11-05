@@ -32,36 +32,39 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/global.scss";
+
 header {
   width: 100%;
   height: 5rem;
-  background-color: #56E39F;
+  background-color: $background-primary;
   display: flex;
 }
 
 header a {
   text-decoration: none;
-  color: #F5F0F6;
+  color: $background-secondary;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
   font-weight: 700;
 }
 
-h1, h5 {
+h1,
+h5 {
   text-align: left;
   margin: 0;
 }
 
 h1 a {
-  color: #465775;
+  color: $primary-color;
   margin: 0;
 }
 
 h1 a:hover,
 h1 a:active,
 h1 a.router-link-active {
-  color: white;
+  color: $secondary-color;
 }
 
 h5 {
@@ -92,11 +95,11 @@ li {
 li a:active,
 li a:hover,
 li a.router-link-active {
-  border: 1px solid #56E39F;
+  border: 1px solid $background-primary;
   border-radius: 10px;
-  background-color: white;
-  color: #56E39F;
-  border-color: #465775;
+  background-color: $secondary-color;
+  color: $background-primary;
+  border-color: $primary-color;
 }
 
 .logo {

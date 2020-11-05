@@ -16,7 +16,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./styles/global.scss";
+
 body {
   margin: 0;
 }
@@ -27,8 +29,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #465775;
-  background-color: #F5F0F6;
+  background-color: $background-secondary;
   height: 100%;
-  color: black !important;
 }
 </style>

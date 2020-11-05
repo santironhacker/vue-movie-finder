@@ -34,10 +34,14 @@ export default {
   /* Set rules to fill background */
   min-height: 90vh;
   min-width: 100%;
-	
+
   /* Set up proportionate scaling */
   width: 100%;
   height: auto;
+}
+
+p {
+  text-align: justify;
 }
 
 q {
