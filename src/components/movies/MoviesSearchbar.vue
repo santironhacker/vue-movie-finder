@@ -23,7 +23,9 @@ export default {
   },
   methods: {
     submitInput() {
-      this.$emit('search-action', this.searchInput);
+      if (this.searchInput !== '') {
+        this.$emit('search-action', this.searchInput);
+      }
     }
   },
   mounted() {
