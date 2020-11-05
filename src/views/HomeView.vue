@@ -1,7 +1,7 @@
 <template>
   <section class="section-1">
     <h2>Movie Finder</h2>
-    <div>
+    <base-card>
       <p>
         It's happen to all of us before. After an exciting conversation with your pals, you come back home thinking:
       </p>
@@ -10,7 +10,7 @@
         However, next morning when you wake up you forgot what was all about. 
         <strong>Movie Finder</strong> watches after your memory to keep track of your friend's best picks.
       </p>
-    </div>
+    </base-card>
   </section>
 </template>
 
