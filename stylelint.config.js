@@ -15,6 +15,12 @@ module.exports = {
           "include"
         ]
       }
+    ],
+    'selector-pseudo-element-no-unknown': [
+      true,
+      {
+        ignorePseudoElements: ['v-deep']
+      }
     ]
   }
 };
