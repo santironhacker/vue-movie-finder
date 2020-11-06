@@ -3,15 +3,18 @@
   <main>
     <router-view />
   </main>
+  <TheFooter />
 </template>
 
 <script>
 import TheHeader from './components/layout/TheHeader.vue';
+import TheFooter from './components/layout/TheFooter.vue';
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader,
+    TheFooter
   }
 };
 </script>
