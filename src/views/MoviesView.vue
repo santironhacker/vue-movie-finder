@@ -30,17 +30,39 @@
         </div>
       </base-card>
     </div>
+    <base-card v-else>
+      <article class="not-found">
+        <img
+          :src="require('@/assets/search-loupe.jpg')"
+          alt="Image of a loupe over a computer"
+        >
+        <movies-feedback
+          v-if="searchTitle === ''"
+          title-message="How to use the Movie Finder"
+          feedback-text="Please enter a movie title of your choice to display some matching results."
+          button-text="Enter a title"
+        />
+        <movies-feedback
+          v-else
+          title-message="No results found"
+          :feedback-text="`No matching results for the provided title &quot;${searchTitle}&quot;. Please try with a new search.`"
+          button-text="Try another title"
+        />
+      </article>
+    </base-card>
   </div>
 </template>
 
 <script>
 import { getMoviesByTitle } from '../api/movies.api';
 import MoviesSlider from '../components/movies/MoviesSlider.vue';
+import MoviesFeedback from '../components/movies/MoviesFeedback.vue';
 
 export default {
   name: 'MoviesView',
   components: {
-    MoviesSlider
+    MoviesSlider,
+        MoviesFeedback
   },
   data () {
     return {
@@ -55,7 +77,6 @@ export default {
     isNoMorePages() {
       let maxPages = Math.floor(this.totalResults / this.apiResultsPerPage);
       if ((this.totalResults % this.apiResultsPerPage) > 0.99) maxPages++;
-      console.log('maxPages is ', maxPages);
       return this.page >= maxPages;
     }
   },
@@ -64,7 +85,6 @@ export default {
   },
   methods: {
     loadMovies () {
-      // Check if the input changed
       if (this.searchTitle !== this.$route.query.title) {
         this.searchTitle = this.$route.query.title;
         this.movies = {};
