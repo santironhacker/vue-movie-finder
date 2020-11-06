@@ -17,6 +17,7 @@
     </div>
     <div class="swiper-button-prev" />
     <div class="swiper-button-next" />
+    <div class="swiper-pagination" />
   </div>
 </template>
 
@@ -67,7 +68,12 @@ export default {
         nextSlideMessage: 'Next slide',
         firstSlideMessage: 'This is the first slide',
         lastSlideMessage: 'This is the last slide'
-      }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: 'true'
+      },
     });
   },
   methods: {
@@ -82,5 +88,24 @@ export default {
 .swiper-slide {
   width: auto;
   height: auto;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin: 1rem 2rem 3rem;
+}
+
+::v-deep .swiper-pagination-bullet {
+  width: 14px;
+  text-shadow: black;
+  background-color: $background-tertiary;
+  border: solid black 1px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+::v-deep .swiper-pagination-bullet-active {
+  background-color: $background-primary;
+  opacity: 1;
 }
 </style>
