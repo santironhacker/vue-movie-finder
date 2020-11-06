@@ -1,9 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue-movie-finder/'
-    : '/',
+  publicPath: '/vue-movie-finder/',
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',

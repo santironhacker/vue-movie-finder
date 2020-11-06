@@ -3,8 +3,7 @@ import HomeView from './views/HomeView.vue';
 import MoviesView from './views/MoviesView.vue';
 
 const router = createRouter({
-  history: createWebHistory(),
-  base: '/vue-movie-finder',
+  history: createWebHistory('/vue-movie-finder/'),
   routes: [
     {
       path: '/', redirect: '/home'
