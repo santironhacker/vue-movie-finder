@@ -4,6 +4,7 @@ import MoviesView from './views/MoviesView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
+  base: '/vue-movie-finder',
   routes: [
     {
       path: '/', redirect: '/home'
