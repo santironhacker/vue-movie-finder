@@ -63,11 +63,11 @@ export default {
 
 <style lang="scss" scoped>
 ul {
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
   max-width: 300px;
+  padding: 0;
+  margin: 1rem 0;
   color: $secondary-color;
+  list-style: none;
 
   strong {
     color: $background-primary;
@@ -75,7 +75,7 @@ ul {
 }
 
 img[alt~="Poster"] {
-  padding: 1rem;
   max-width: 300px;
+  padding: 1rem;
 }
 </style>

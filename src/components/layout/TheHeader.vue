@@ -38,29 +38,29 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  display: flex;
   width: 100%;
   height: 5rem;
   background-color: $background-primary;
-  display: flex;
 }
 
 header a {
-  text-decoration: none;
-  color: $background-secondary;
   padding: 0.75rem 1.5rem;
-  border: 1px solid transparent;
   font-weight: 700;
+  color: $background-secondary;
+  text-decoration: none;
+  border: 1px solid transparent;
 }
 
 h1,
 h5 {
-  text-align: left;
   margin: 0;
+  text-align: left;
 }
 
 h1 a {
-  color: $primary-color;
   margin: 0;
+  color: $primary-color;
 }
 
 h1 a:hover,
@@ -74,20 +74,20 @@ h5 {
 }
 
 header nav {
-  width: 90%;
-  margin: auto;
   display: flex;
   align-items: center;
+  width: 90%;
+  margin: auto;
 }
 
 header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
   margin-left: auto;
+  list-style: none;
 }
 
 li {
@@ -97,11 +97,11 @@ li {
 li a:active,
 li a:hover,
 li a.router-link-active {
-  border: 1px solid $background-primary;
-  border-radius: 10px;
-  background-color: $secondary-color;
   color: $background-primary;
+  background-color: $secondary-color;
+  border: 1px solid $background-primary;
   border-color: $primary-color;
+  border-radius: 10px;
 }
 
 .logo {

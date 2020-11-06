@@ -101,10 +101,10 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15)), url("../assets/movie-room-original.jpg") no-repeat center center fixed;
   width: 100%;
   height: auto;
   padding-bottom: 5rem;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15)), url("../assets/movie-room-original.jpg") no-repeat center center fixed;
 }
 
 h2 {
@@ -125,10 +125,10 @@ h3 {
   display: flex;
 
   img {
-    height: 200px;
     width: auto;
-    border-radius: 10px;
+    height: 200px;
     border: solid 1px $accent-color;
+    border-radius: 10px;
   }
 }
 </style>

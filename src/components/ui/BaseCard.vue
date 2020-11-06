@@ -14,12 +14,12 @@ export default {
 @import "../../styles/global.scss";
 
 .card {
-  margin: 0 auto;
-  padding: 2rem;
   width: 60%;
+  padding: 2rem;
+  margin: 0 auto;
   background-color: $background-primary;
-  opacity: 0.9;
   border: solid 1px $primary-color;
   border-radius: 20px;
+  opacity: 0.9;
 }
 </style>

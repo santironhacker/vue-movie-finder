@@ -41,9 +41,9 @@ export default {
 
 <style lang="scss" scoped>
 aside {
-  padding: 1rem 0;
   display: flex;
   justify-content: space-around;
+  padding: 1rem 0;
 }
 
 input {

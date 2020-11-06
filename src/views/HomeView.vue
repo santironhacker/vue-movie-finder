@@ -33,20 +33,18 @@ export default {
 
 <style lang="scss" scoped>
 .section-1 {
+  /* Set up proportionate scaling & Set rules to fill background */
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  min-height: 90vh;
+
   /* Set background style */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../assets/movie-rolls-original.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-  /* Set rules to fill background */
-  min-height: 90vh;
-  min-width: 100%;
-
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
 }
 
 h2 {
@@ -58,7 +56,7 @@ p {
 }
 
 q {
-  font-style: italic;
   font-size: 18px;
+  font-style: italic;
 }
 </style>

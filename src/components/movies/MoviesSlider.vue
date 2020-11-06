@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 .swiper-slide {
-  height: auto;
   width: auto;
+  height: auto;
 }
 </style>

@@ -56,28 +56,28 @@ export default {
 <style lang="scss" scoped>
 button,
 a {
-  text-decoration: none;
+  display: inline-block;
+  margin-right: 0.5rem;
   font: inherit;
   color: $secondary-color;
+  text-decoration: none;
   cursor: pointer;
   border-radius: 10px;
-  margin-right: 0.5rem;
-  display: inline-block;
 }
 
 .flat {
-  background-color: transparent;
-  color: $accent-color;
-  border: none;
   font-weight: 500;
+  color: $accent-color;
+  background-color: transparent;
+  border: none;
 }
 
 .outline {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
   background-color: $primary-color;
   border: 1px solid $accent-color;
   border-radius: 10px;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
 }
 
 .outline:hover {
