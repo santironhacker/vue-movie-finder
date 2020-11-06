@@ -15,10 +15,19 @@
         </base-button>
         <base-button
           mode="outline"
+          :disabled="isNoMorePages"
           @click="onNextPage"
         >
           Next page
         </base-button>
+        <div v-show="isNoMorePages">
+          <base-button
+            link
+            mode="outline"
+          >
+            Try another title
+          </base-button>
+        </div>
       </base-card>
     </div>
   </div>
@@ -37,10 +46,18 @@ export default {
     return {
       movies: {},
       page: 1,
-      totalResults: 30,
+      totalResults: 0,
       searchTitle: '',
       apiResultsPerPage: 10
     };
+  },
+  computed: {
+    isNoMorePages() {
+      let maxPages = Math.floor(this.totalResults / this.apiResultsPerPage);
+      if ((this.totalResults % this.apiResultsPerPage) > 0.99) maxPages++;
+      console.log('maxPages is ', maxPages);
+      return this.page >= maxPages;
+    }
   },
   mounted () {
     this.loadMovies();

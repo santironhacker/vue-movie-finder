@@ -88,4 +88,10 @@ a {
 .flat:active {
   color: $secondary-color;
 }
+
+button:disabled,
+button:disabled:hover {
+  cursor: not-allowed;
+  background-color: $background-disabled;
+}
 </style>
