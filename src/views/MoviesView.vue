@@ -35,7 +35,7 @@
         <base-spinner />
       </article>
       <article 
-        v-show="!isLoading" 
+        v-show="!isLoading"
         class="not-found"
       >
         <img
@@ -47,6 +47,12 @@
           title-message="How to use the Movie Finder"
           feedback-text="Please enter a movie title of your choice to display some matching results."
           button-text="Enter a title"
+        />
+        <movies-feedback
+          v-else-if="isError"
+          title-message="An error occurred"
+          feedback-text="Please try again later or check your internet connection."
+          button-text="Thanks, I will try later"
         />
         <movies-feedback
           v-else
@@ -77,7 +83,8 @@ export default {
       totalResults: 0,
       searchTitle: '',
       apiResultsPerPage: 10,
-      isLoading: true
+      isLoading: true,
+      isError: false
     };
   },
   computed: {
@@ -93,6 +100,7 @@ export default {
   methods: {
     loadMovies () {
       this.isLoading = true;
+      this.isError = false;
       const queryTitle = this.$route.query.title;
       if (queryTitle && (this.searchTitle !== queryTitle)) {
         this.searchTitle = queryTitle;
@@ -111,7 +119,7 @@ export default {
             }
           })
           .catch(error => {
-            console.warn(error);
+            this.isError = true;
           })
           .then(() => {
             this.isLoading = false;
