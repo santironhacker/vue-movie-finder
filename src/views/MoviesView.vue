@@ -31,7 +31,13 @@
       </base-card>
     </div>
     <base-card v-else>
-      <article class="not-found">
+      <article v-show="isLoading">
+        <base-spinner />
+      </article>
+      <article 
+        v-show="!isLoading" 
+        class="not-found"
+      >
         <img
           :src="require('@/assets/search-loupe.jpg')"
           alt="Image of a loupe over a computer"
@@ -70,7 +76,8 @@ export default {
       page: 1,
       totalResults: 0,
       searchTitle: '',
-      apiResultsPerPage: 10
+      apiResultsPerPage: 10,
+      isLoading: true
     };
   },
   computed: {
@@ -85,6 +92,7 @@ export default {
   },
   methods: {
     loadMovies () {
+      this.isLoading = true;
       if (this.searchTitle !== this.$route.query.title) {
         this.searchTitle = this.$route.query.title;
         this.movies = {};
@@ -93,17 +101,19 @@ export default {
         getMoviesByTitle(this.searchTitle, this.page)
           .then(res => {
             const onePageResults = [];
-            res.data.Search.forEach(movie => {
-              onePageResults.push(movie);
-            });
-            this.movies[this.page] = onePageResults;
-            this.totalResults = res.data.totalResults;
+            if (res.data && (res.data.Response === 'True')) {
+              res.data.Search.forEach(movie => {
+                onePageResults.push(movie);
+              });
+              this.movies[this.page] = onePageResults;
+              this.totalResults = res.data.totalResults;
+            }
           })
           .catch(error => {
-            console.log(error);
+            console.warn(error);
           })
           .then(() => {
-            console.log('always executed');
+            this.isLoading = false;
           });
       }
     },
