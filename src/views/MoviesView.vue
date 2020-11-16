@@ -93,8 +93,9 @@ export default {
   methods: {
     loadMovies () {
       this.isLoading = true;
-      if (this.searchTitle !== this.$route.query.title) {
-        this.searchTitle = this.$route.query.title;
+      const queryTitle = this.$route.query.title;
+      if (queryTitle && (this.searchTitle !== queryTitle)) {
+        this.searchTitle = queryTitle;
         this.movies = {};
       }
       if (!Object.prototype.hasOwnProperty.call(this.movies, this.page)) {
