@@ -92,7 +92,7 @@ export default {
 
 .swiper-pagination {
   position: relative;
-  margin: 1rem 2rem 3rem;
+  margin: 1rem 0 3rem;
 }
 
 ::v-deep .swiper-pagination-bullet {
