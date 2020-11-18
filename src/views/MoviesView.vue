@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>Matching movies</h2>
-    <div v-if="Object.keys(movies).length > 0">
+    <div v-if="!isLoading && Object.keys(movies).length > 0">
       <movies-slider :movies="movies[page]" />
       <base-card class="actionsCard">
         <h3>Looking for more results?</h3>
