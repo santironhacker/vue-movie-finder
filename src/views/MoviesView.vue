@@ -43,6 +43,8 @@
         <img
           :src="require('@/assets/search-loupe.jpg')"
           alt="Image of a loupe over a computer"
+          width="303"
+          height="202"
         >
         <movies-feedback
           v-if="searchTitle === ''"
