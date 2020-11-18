@@ -15,6 +15,9 @@ export default {
   components: {
     TheHeader,
     TheFooter
+  },
+  mounted() {
+    console.log('Version 2 pushed');
   }
 };
 </script>
