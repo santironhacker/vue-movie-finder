@@ -17,7 +17,7 @@ export default {
     TheFooter
   },
   mounted() {
-    console.log('Version 2 pushed');
+    console.log('Version 3 pushed');
   }
 };
 </script>
