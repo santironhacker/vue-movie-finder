@@ -16,7 +16,7 @@ export default {
 .card {
   width: 60%;
   padding: 2rem;
-  margin: 0 auto;
+  margin: 3rem auto;
   background-color: $background-primary;
   border: solid 1px $primary-color;
   border-radius: 20px;

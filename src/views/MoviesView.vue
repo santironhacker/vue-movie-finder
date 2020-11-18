@@ -31,7 +31,9 @@
       </base-card>
     </div>
     <base-card v-else>
-      <article v-show="isLoading">
+      <article 
+        v-show="isLoading"
+      >
         <base-spinner />
       </article>
       <article 
@@ -74,7 +76,7 @@ export default {
   name: 'MoviesView',
   components: {
     MoviesSlider,
-        MoviesFeedback
+    MoviesFeedback
   },
   data () {
     return {
@@ -162,6 +164,7 @@ h3 {
 
 .not-found {
   display: flex;
+  align-items: center;
 
   img {
     width: auto;

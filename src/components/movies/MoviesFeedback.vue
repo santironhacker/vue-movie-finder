@@ -7,6 +7,7 @@
     <base-button
       link
       mode="outline"
+      class="feedback-button"
     >
       {{ buttonText }}
     </base-button>
@@ -32,8 +33,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .feedback {
   margin: 1rem;
+
+  .feedback-button {
+    margin: 1rem;
+  }
 }
 </style>
